@@ -35,3 +35,27 @@ void mutex_unlock(mutex_m *mutex) {
         : "rax"
     );
 }
+
+void semaphore_acquire(semaphore_m *sem) {
+    assert(sem != NULL);
+    asm volatile(
+        "DECL %0\n\t"
+        "SEMAPHORE_LOOP_UNTIL_AVAILABLE:\n\t"
+            "CMPL $1, %0\n\t"
+            "JB SEMAPHORE_LOOP_UNTIL_AVAILABLE"
+        : "=m" (sem->flag)      // output (%0). earlyclobber?
+        : "0" (sem->flag)       // input (%1)
+        : "memory"              // clobbers
+    );
+}
+
+void semaphore_release(semaphore_m *sem) {
+    assert(sem != NULL);
+    assert(sem != NULL);
+    asm volatile(
+        "INCL %0"
+        : "=m" (sem->flag)      // output (%0)
+        : // no inputs          // input (%1)
+        : "memory"              // clobbers
+    );
+}
