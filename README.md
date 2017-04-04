@@ -1,12 +1,13 @@
 # Locks
 
-Implementation of a basic spinlock in C.
+Implementation of a basic spinlock in C and x86 assembly.
 
 # Resources
 
- * [EXCG](http://x86.renejeschke.de/html/file_module_x86_id_328.html)
- * [Stack Overflow](http://stackoverflow.com/questions/22424209/tsl-instruction-reference)
+ * [XCHG](http://x86.renejeschke.de/html/file_module_x86_id_328.html)
+ * [Pseudocode](http://stackoverflow.com/questions/22424209/tsl-instruction-reference)
  * [Test & set](https://en.wikipedia.org/wiki/Test-and-set)
+ * [Semaphore reference](https://en.wikipedia.org/wiki/Semaphore_(programming))
  * [Extended ASM](https://gcc.gnu.org/onlinedocs/gcc/Extended-Asm.html#Clobbers)
  * [GCC inline assembly](http://www.ibiblio.org/gferg/ldp/GCC-Inline-Assembly-HOWTO.html#s5)
 
