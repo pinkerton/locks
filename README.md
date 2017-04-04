@@ -1,4 +1,4 @@
-# Mutex
+# Locks
 
 Implementation of a basic spinlock in C.
 
@@ -14,7 +14,7 @@ Implementation of a basic spinlock in C.
 Basic usage
 ====
  * Clone this repo
- * `cd c-template`
+ * `cd locks`
  * `mkdir build && cd build`
  * `cmake ..`
  * `make`
